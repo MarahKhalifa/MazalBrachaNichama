@@ -1,0 +1,1184 @@
+﻿/* set site fonts */
+@font-face {
+    font-family: 'Gveret Levin';
+    src: url('../fonts/GveretLevinAlefAlefAlef-Regular.eot');
+    src: url('../fonts/GveretLevinAlefAlefAlef-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Aran';
+    src: url('../fonts/OSAran-400.eot');
+    src: url('../fonts/OS-Aran_400FFC.ttf');
+}
+
+/* reset properties */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:link, a:visited {
+        color: currentColor;
+    }
+
+    a[href="#"]:hover {
+        cursor: not-allowed!important; /* As instructed, blank href changes the cursor to not allowed */
+    }
+
+/* general - head, body, container */
+html {
+    width: 100%;
+}
+
+body {
+    direction: rtl;
+    width: 100%;
+    height: 100%;
+    font-family: Aran; /* All pages have font Aran except elments with a class fontGveret */
+}
+
+.fontGveret {
+    font-family: 'Gveret Levin';
+}
+
+#container {
+    width: 1280px; /* As instructed page has specified width */
+    margin: auto;
+    margin-top: 100px;
+}
+
+/* Accessibility */
+.skipToMain {   /* A button that appears at first tab */
+    display: block;
+    position: fixed; 
+    top: -30px;
+    right: 50%;
+    margin-right: -50px;
+    width: 100px;
+    height: 30px;
+    background-color: #FFC000;
+    text-align: center;
+    font-size: 25px;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+.skipToMain:focus { /* at focus the button enters the page */
+     top: 0;
+}
+
+
+.accessibility { /* accessibility button at the bottom of the page */
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    left: -80px;
+    background-color: #01BAF0;
+    height: 40px;
+    width: 100px;
+    font-size: 30px;
+    padding: 0 10px;
+    text-align: left;
+    border-radius: 0 20px 20px 0;
+    direction: ltr;
+    transition: left 0.5s;
+    z-index: 3;
+}
+
+    .accessibility:hover {
+        left: 0;
+    }
+
+@media screen and (max-width: 1280px) { /* changing the header appearance at zoom in */
+    .headNav {
+        right: 200px!important;
+    }
+}
+
+@media screen and (max-width: 800px) { /* changing the header appearance at major zoom in */
+    .headLogo {
+        display: none!important;
+    }
+
+    .headNav {
+        right: 0!important;
+    }
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    background-color: #CED2D3;
+    width: 1280px;
+    height: 100px;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+.headLogo {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: 20px;
+}
+
+    .headLogo img {
+        height: 100%;
+        display: block;
+        margin: auto;
+    }
+
+
+nav.headNav {
+    position: absolute;
+    left: 20px;
+    top: 54px;
+}
+
+/* specifying hierarchy elements style at head navigation */
+
+.headNav ul li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 25px;
+    width: 130px;
+}
+
+.headNav > ul > li {
+    height: 47px;
+}
+
+    .headNav > ul > li > a {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .headNav ul li a.active {
+        color: #FF6392;
+        text-decoration-line: underline;
+        font-weight: bold;
+    }
+
+        .headNav > ul > li > a:hover {
+            color: #FF6392;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration-line: underline;
+        }
+
+.headNav ul li ul {
+    display: none;
+    position: absolute;
+    top: 47px;
+    background-color: #CED2D3;
+    border-bottom: 0.5px solid black;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    padding: 5px 0 10px 0;
+}
+
+    .headNav ul li ul li {
+        display: block;
+        font-size: 20px;
+        width: 120px;
+        line-height: 20px;
+        padding: 5px;
+    }
+
+.headNav ul li:hover ul {
+    display: block;
+    font-weight: 400;
+}
+
+.headNav ul li ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+    .headNav ul li ul li a:hover {
+        color: #FF6392;
+        font-weight: bold;
+    }
+
+/* homepage */
+#homepageOpener { /* styling homepage opener as a unique opener */
+    height: 500px;
+    padding: 20px;
+    position: relative;
+}
+
+    #homepageOpener p {
+        position: relative;
+        top: 25px;
+        right: 25px;
+        font-size: 35px;
+        width: 550px;
+        line-height: 55px;
+        letter-spacing: 1.5px;
+        word-spacing: 5px;
+        display: inline-block;
+    }
+
+    /* styling grandmas image inside homepage opener */
+
+.grandmasHomepageImg {
+    background-image: url("../Media/grandmasHomepage.png");
+    background-size: 800px auto;
+    background-repeat: no-repeat;
+    width: 780px;
+    height: 500px;
+    position: absolute;
+    left: 10px;
+    bottom: -32px;
+}
+
+    .grandmasHomepageImg .grandmaName {
+        position: absolute;
+        font-size: 30px;
+        top: 55px;
+        font-weight: bold;
+    }
+
+.grandmaName#Mazal {
+    left: 530px;
+    width: 100px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+    .grandmaName#Mazal span {
+        position: absolute;
+        left: 50%;
+        width: 30px;
+        height: 180px;
+        margin-left: -30px;
+        text-align: center;
+        transform-origin: bottom center;
+    }
+
+        /* styling a unique position for every letter */    
+
+        .grandmaName#Mazal span:nth-of-type(1) {
+            transform: rotate(-16deg);
+        }
+
+        .grandmaName#Mazal span:nth-of-type(2) {
+            transform: rotate(0deg);
+        }
+
+        .grandmaName#Mazal span:nth-of-type(3) {
+            transform: rotate(16deg);
+        }
+
+.grandmaName#Bracha {
+    left: 335px;
+    width: 100px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+    .grandmaName#Bracha span {
+        position: absolute;
+        left: 50%;
+        width: 30px;
+        height: 180px;
+        margin-left: -30px;
+        text-align: center;
+        transform-origin: bottom center;
+    }
+        /* styling a unique position for every letter */        
+
+        .grandmaName#Bracha span:nth-of-type(1) {
+            transform: rotate(-18deg);
+        }
+
+        .grandmaName#Bracha span:nth-of-type(2) {
+            transform: rotate(-6deg);
+        }
+
+        .grandmaName#Bracha span:nth-of-type(3) {
+            transform: rotate(6deg);
+        }
+
+        .grandmaName#Bracha span:nth-of-type(4) {
+            transform: rotate(18deg);
+        }
+
+.grandmaName#Nechama {
+    left: 185px;
+    width: 30px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+    .grandmaName#Nechama span {
+        position: absolute;
+        left: 50%;
+        width: 30px;
+        height: 200px;
+        margin-left: -30px;
+        text-align: center;
+        transform-origin: bottom center;
+    }
+        /* styling a unique position for every letter */        
+
+        .grandmaName#Nechama span:nth-of-type(1) {
+            transform: rotate(-18deg);
+        }
+
+        .grandmaName#Nechama span:nth-of-type(2) {
+            transform: rotate(-6deg);
+        }
+
+        .grandmaName#Nechama span:nth-of-type(3) {
+            transform: rotate(6deg);
+        }
+
+        .grandmaName#Nechama span:nth-of-type(4) {
+            transform: rotate(18deg);
+        }
+
+.openerSound {
+    display: block;
+    width: 280px;
+    height: 20px;
+    margin: 75px 25px;
+    font-size: 30px;
+}
+
+    .openerSound audio {
+        display: block;
+        margin-top: 30px;
+    }
+
+/* styling life event selection at homepage */
+
+.eventSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+}
+
+    .eventSelection > .lifeEventBtn {
+        background-color: #FFC000;
+        width: 266px;
+        height: 280px;
+        margin: 0 60px 60px 60px;
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+.lifeEventBtn:hover {
+    background-color: #FFD85D;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* styling special event selection at homepage */
+
+.specialEvents > .specialEventBtn {
+    background-color: #F2F2F2;
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.specialEvents {
+    background-color: #FFB3CB;
+    padding-bottom: 30px;
+}
+
+.homepageTitles {
+    height: 100px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+    display: block;
+    width: 100%;
+    font-family: 'Gveret Levin';
+}
+
+.specialEventBtn .specialEventImg {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
+    position: relative;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+.specialEventImg:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 192, 0, 0.3);
+    transition: height 0.5s;
+}
+
+.specialEventBtn:hover .specialEventImg:after {
+    height: 0px;
+}
+
+/* special events images */
+
+.barMitzvaImg {
+    background-image: url("../Media/special/BarMitzva.jpeg");
+}
+
+.hinaImg {
+    background-image: url("../Media/special/hina.jpeg");
+}
+
+.halakeImg {
+    background-image: url("../Media/special/halake.jpeg");
+}
+
+.engagementImg {
+    background-image: url("../Media/special/engagement.jpg");
+}
+
+.firstToothImg {
+    background-image: url("../Media/special/firstTooth.jpeg");
+}
+
+
+/* birth\wedding\funeral page */
+article {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    scroll-margin-top: 100px; /* this styling allows inner page navigation when header is at fixed position */
+}
+
+/* patterns for events pages */
+
+.druzimPattern {
+    background-image: url(../Media/wedding/druzimPattern.jpg);
+    background-size: 900px auto;
+}
+.AtupimPattern {
+    background-image: url(../Media/funeral/AtupimPattern.png);
+    background-size: 900px auto;
+}
+.halakePattern {
+    background-image: url(../Media/special/halakePattern.png);
+    background-size: 400px auto;
+}
+.bucharimPattern {
+    background-image: url(../Media/birth/bucharimPattern.png);
+    background-size: 400px auto;
+}
+
+.opener {
+    background-color: #01BAF0;
+    height: 200px;
+    position: relative;
+    scroll-margin-top: 100px;
+}
+
+    .opener h1 {
+        font-size: 65px;
+        position: absolute;
+        top: 50px;
+        right: 250px;
+        width: 620px;
+    }
+    .opener p {
+        font-size: 25px;
+        display: block;
+        position: absolute;
+        top: 130px;
+        right: 265px;
+    }
+
+/* breadCrumbs navigation */
+
+.breadCrumbs {
+    height: 16px;
+    position: sticky;
+    top: 100px;
+    right: 85px;
+}
+
+    .breadCrumbs li {
+        cursor: pointer;
+    }
+
+nav.breadCrumbs ol li {
+    display: inline-block;
+}
+
+    nav.breadCrumbs ol li:after {
+        content: ">";
+    }
+
+    nav.breadCrumbs ol li:last-child:after {
+        content: "";
+    }
+
+    nav.breadCrumbs ol li:last-child {
+        font-weight: bold;
+        cursor: default;
+    }
+
+/* side navigation for inner page links */
+
+.sideNav {
+    width: 19.9999%;
+    padding-top: 20px;
+    float: right;
+    position: sticky;
+    top: 116px;
+}
+
+    .sideNav ul li {
+        padding-top: 10px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+        .sideNav ul li:before {
+            content: "";
+            width: 150px;
+            height: 0px;
+            border: 0.5px solid gray;
+            display: block;
+            position: relative;
+            top: -10px;
+        }
+
+        .sideNav ul li:last-child:after {
+            content: "";
+            width: 150px;
+            height: 0px;
+            border: 0.5px solid gray;
+            display: block;
+            position: relative;
+            top: 8px;
+        }
+
+        .sideNav ul li a:link {
+            text-decoration: none;
+            color: black;
+            width: 151px;
+            height: 30px;
+            display: inline-block;
+        }
+
+        .sideNav ul li a:visited {
+            color: black;
+        }
+
+        .sideNav ul li a:hover {
+            color: #FF6392;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+/* main content of the article */
+
+.main {
+    padding-top: 20px;
+    width: 79.9999%;
+    display: inline-block;
+    right: 300px;
+}
+
+/* content section that is multi added to main part of article */
+
+.content {
+    display: inline-block;
+    width: 100%;
+    min-height: 270px;
+    scroll-margin-top: 100px;
+    position: relative;
+    padding-bottom: 75px;
+}
+
+    .content h2 {
+        margin: 20px 0 20px 0;
+        font-size: 40px;
+    }
+
+.contentImg {
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    background-size: 400px auto;
+    background-position: center bottom;
+}
+
+/* grandmas images for events sections */
+
+.WeddingGrandmaDressImg {
+    background-image: url(../Media/wedding/GrandmaWedding-dress.png);
+}
+
+.WeddingGrandmaGiftImg {
+    background-image: url(../Media/wedding/grandmaWedding-gift.png);
+}
+
+.WeddingGrandmaScheduleImg {
+    background-image: url(../Media/wedding/GrandmaWedding-schedule.png);
+}
+
+.WeddingGrandmaDancingImg {
+    background-image: url(../Media/wedding/GrandmaWedding-dancing.png);
+}
+
+.birthGrandmaWhyImg {
+    background-image: url(../Media/birth/grandmaBirth-why.png);
+}
+.birthGrandmaDressImg {
+    background-image: url(../Media/birth/grandmaBirth-dress.png);
+}
+.birthGrandmaGiftImg {
+    background-image: url(../Media/birth/grandmaBirth-gift.png);
+}
+.birthGrandmaScheduleImg {
+    background-image: url(../Media/birth/grandmaBirth-brit.png);
+}
+.birthGrandmaBritaImg {
+    background-image: url(../Media/birth/grandmaBirth-brita.png);
+}
+.funeralGrandmaPrepImg {
+    background-image: url(../Media/funeral/grandmaFuneralPrep.png);
+}
+.funeralGrandmaReceptionImg {
+    background-image: url(../Media/funeral/grandmaFuneralReception.png);
+}
+.funeralGrandmaCeremonyImg {
+    background-image: url(../Media/funeral/grandmaFuneralCeremony.png);
+}
+.funeralGrandmaShevaImg {
+    background-image: url(../Media/funeral/grandmaFuneralSheva.png);
+}
+.funeralGrandmaGiftImg {
+    background-image: url(../Media/funeral/grandmaFuneralGift.png);
+}
+.halakeGrandmaWhatImg {
+    background-image: url(../Media/special/grandmaHalakeWhat.png);
+}
+.halakeGrandmaWhyImg {
+    background-image: url(../Media/special/grandmaHalakeWhy.png);
+}
+.halakeGrandmaWhereImg {
+    background-image: url(../Media/special/grandmaHalakeWhere.png);
+}
+.halakeGrandmaGiftImg {
+    background-image: url(../Media/special/grandmaHalakeGift.png);
+}
+.halakeGrandmaCeremonyImg {
+    background-image: url(../Media/special/grandmaHalakeCeremony.png);
+}
+
+/* styling sound at content */
+
+.content .Sound {
+    display: block;
+    width: 200px;
+    height: 10px;
+    font-size: 20px;
+    position: absolute;
+    bottom: 60px;
+    left: 450px;
+}
+
+.Sound audio {
+    display: block;
+    margin-top: 10px;
+}
+
+/* additional styling for content section */
+
+.content ol {
+    margin-right: 23px;
+}
+
+.content > p, .content li {
+    font-size: 25px;
+    line-height: 30px;
+    width: 65%;
+}
+
+.content.longContent > p, .content.longContent li {
+    width: 85%;
+}
+
+/* styling extra info that follows every content section */
+
+.extraInfo {
+    display: block;
+    width: 100%;
+    background-color: #FFDF7F;
+    margin-top: 20px;
+}
+
+    .extraInfo img {
+        position: relative;
+        width: 220px;
+        margin: 10px;
+        display: inline-block;
+        vertical-align: top;
+        border: 1px solid black;
+    }
+    #joomaImgBlack {
+        width: 120px;
+    }
+    #joomaImgBaby {
+        width: 190px;
+    }
+
+    .extraInfo p {
+        display: inline-block;
+        margin: 5px 0 10px 0;
+    }
+    .extraInfo > .noBorderImg {
+        border: 0px;
+    }
+
+/* styling additional information that is shown inside extraInfo */
+
+.additionalContent {
+    max-height: 35px;
+    width: 760px;
+    overflow: hidden;
+    transition-duration: 0.7s;
+    transition-timing-function: linear;
+    cursor: default;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+    .additionalContent:hover {
+        max-height: 500px;
+    }
+
+.specialInfo {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* styling a special large image that is unique*/
+#specialImg {
+    width: 800px;
+}
+
+/* styling a special video that is unique*/
+.specialVideo {
+    width: 560px; 
+    height: 315px;
+}
+
+/* styling credits under images */
+p.credit {
+    margin-right: 10px;
+    width: 220px;
+    text-align: center;
+}
+
+/* styling info bubbles that is shown on words inside content section */
+.infoBubbleWord {
+    position:relative;
+    margin-left: 21px;
+}
+.infoBubble {
+    border: 1px solid black;
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: -194px;
+    background-color: #F2F2F2;
+    box-shadow: -10px 10px 10px #F2F2F2;
+    display: none;
+    line-height: 25px;
+    text-align: right;
+    border-radius: 10px;
+}
+.infoBubbleWord:hover .infoBubble {
+    display: block;
+}
+.addIcon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url(../Media/icons/plus.png);
+    background-size: 12px 12px;
+}
+.plusBox {
+    position: absolute;
+    bottom: 5px;
+    left: -22px;
+    font-size: 20px;
+}
+.chairBubble img {
+    display: block;
+    width: 150px;
+}
+
+/* Culture Selection */
+.culturePattern {
+    background-image: url(../Media/culture/culturePattern.png);
+    background-size: 400px auto;
+}
+.cultureSelection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .cultureSelection > .culture {
+        background-color: #FFC000;
+        width: 266px;
+        height: 380px;
+        margin: 60px;
+        text-decoration: none;
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 20px;
+        position: relative;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+.culture:hover {
+    background-color: #FFD85D;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.culture.contactUsBtn {
+    line-height: 50px;
+    padding: 50px 5px 0 5px;
+    height: 350px;
+    width: 256px;
+}
+
+/* styling cultures images */
+
+.cultureImg {
+    background-repeat: no-repeat;
+    width: 266px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    background-size: 230px auto;
+    background-position: center bottom;
+}
+
+.cultureAtupimImg {
+    background-image: url("../Media/culture/Atupim.png");
+}
+.cultureBiduimImg {
+    background-image: url("../Media/culture/Biduim.png");
+    background-position: 35px -90px;
+}
+.cultureBocharimImg {
+    background-image: url("../Media/culture/Bocharim.png");
+}
+.cultureDruzimImg {
+    background-image: url("../Media/culture/Druzim.png");
+    background-position: 18px -67px;
+}
+.cultureMarocoImg {
+    background-image: url("../Media/culture/Maroco.png");
+    background-position: -17px -66px;
+    background-size: 289px;
+}
+.culturePolinImg {
+    background-image: url("../Media/culture/Polin.png");
+    background-position: 14px -67px;
+}
+.cultureRussianImg {
+    background-image: url("../Media/culture/Russian.png");
+    background-position: 10px -60px;
+    background-size: 254px;
+}
+.cultureTimanImg {
+    background-image: url("../Media/culture/Timan.png");
+}
+.cultureAtupimSadImg {
+    background-image: url("../Media/culture/AtupimSad.png");
+}
+.cultureBiduimSadImg {
+    background-image: url("../Media/culture/BiduimSad.png");
+    background-position: 25px -74px;
+    background-size: 240px;
+}
+.cultureBocharimSadImg {
+    background-image: url("../Media/culture/BocharimSad.png");
+}
+.cultureDruzimSadImg {
+    background-image: url("../Media/culture/DruzimSad.png");
+}
+.culturePolinSadImg {
+    background-image: url("../Media/culture/PolinSad.png");
+    background-position: 14px -67px;
+}
+.cultureTimanSadImg {
+    background-image: url("../Media/culture/TimanSad.png");
+}
+
+/*about*/
+.odotPattern {
+    background-image: url(../Media/about/odotPattern.png);
+    background-size: 200px auto;
+}
+.aboutUs section {
+    padding: 20px;
+}
+.aboutUs h2 {
+    font-size: 40px;
+    line-height: 50px;
+}
+.aboutUs section p, .aboutUs section li {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+/* styling the site team photos */
+.teamPhotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0px;
+}
+.ourPhoto {
+    background-color: #FFC000;
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    font-size: 35px;
+    text-align: center;
+    background-size: 200px auto;
+    background-repeat: no-repeat;
+    background-position: 6px -30px;
+}
+.grandmaDana {
+    background-image: url("../Media/about/Dana.png");
+}
+.grandmaMaya {
+    background-image: url("../Media/about/Maya.png");
+}
+.grandmaMarah {
+    background-image: url("../Media/about/Marah.png");
+}
+.grandmaZiv {
+    background-image: url("../Media/about/Ziv.png");
+}
+
+/*ContactUs*/
+.contactUsPre {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 20px 20px 0px 0px;
+}
+
+/* styling the contact us form */
+.contactUsForm {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+}
+
+    .contactUsForm > div {
+        margin-top: 15px;
+    }
+
+    .contactUsForm label {
+        display: block;
+        padding-top: 10px;
+        font-weight: bold;
+    }
+
+        .contactUsForm label input {
+            font-weight: normal;
+        }
+
+/* invert bold property at specific elements */
+div.boldInverted {
+    font-weight: bold;
+}
+
+    div.boldInverted label {
+        font-weight: normal;
+    }
+
+.contactUsForm .gender label {
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.contactUsForm textarea {
+    width: 600px;
+    font-size: 20px;
+}
+
+.contactUsForm .contactUsBtns label {
+    display: inline-block;
+    line-height: 20px;
+}
+
+/* styling grandmas photo*/
+.contactUsGrandmas {
+    display: inline-block;
+    background-image: url(../Media/about/contactUsGrandmas.png);
+    background-size: 600px auto;
+    width: 600px;
+    height: 400px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -32px;
+    left: 13px;
+}
+
+/* Site Map */
+.siteMapTable {
+    margin: 20px auto 140px auto;
+    width: 60%;
+    text-align: right;
+}
+
+.siteMapTable th {
+    font-size: 30px;
+    line-height: 45px;
+}
+
+.siteMapTable td {
+    font-size: 27px;
+    line-height: 40px;
+}
+
+.siteMapTable tr td:nth-of-type(4) {
+    width: 200px;
+}
+.siteMapGrandmas {
+    display: inline-block;
+    background-image: url(../Media/about/siteMapGrandmas.png);
+    background-size: 600px auto;
+    width: 620px;
+    height: 400px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -185px;
+    left: -26px;
+}
+.siteMapTable td a:hover, th a:hover {
+    color: #FF6392;
+}
+.siteMapTable a[href="#"] { /* styling blank href to be gray as instructed*/
+    color: grey;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+    background-image: url(../Media/footerPattern.png);
+    background-size: 450px auto;
+}
+
+.footerBtn {
+    width: 130px;
+    margin: 40px;
+    text-align: center;
+}
+
+    .footerBtn:nth-of-type(2) {
+        margin: 40px 300px;
+    }
+
+    .footerBtn:hover {
+        color: #FF6392;
+    }
+
+/* Icons */
+.i-accessibility {
+    background: url(../Media/icons/accessible.svg);
+}
+
+.i-wedding {
+    background: url(../Media/icons/wedding.png);
+}
+
+.i-birth {
+    background: url(../Media/icons/birth.png);
+}
+
+.i-funeral {
+    background: url(../Media/icons/funeral.png);
+}
+
+.icon24 {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+.icon160 {
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-size: 160px 160px;
+    background-repeat: no-repeat;
+    margin: 30px 50px 20px 0;
+}
+
+/* Bullets */
+ul.bullet {
+    list-style: none;
+}
+
+    ul.bullet li {
+        background: no-repeat right top;
+        background-size: 25px;
+        padding-right: 35px;
+        line-height: 35px;
+    }
+
+ul.weddingBullet li {
+    background-image: url("../Media/icons/weddingBullet.png");
+    background-position: 100% 7px;
+}
+
+ul.birthBullet li {
+    background-image: url("../Media/icons/birthBullet.png");
+    background-position: 100% 7px;
+}
+
+ul.funeralBullet li {
+    background-image: url("../Media/icons/funeralBullet.png");
+    background-position: 100% 10px;
+}
+ul.halakeBullet li {
+    background-image: url("../Media/icons/halakeBullet.png");
+    background-position: 100% 10px;
+}

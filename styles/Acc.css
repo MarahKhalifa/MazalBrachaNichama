@@ -1,0 +1,47 @@
+﻿
+/* Header */
+header, .headNav, .headNav ul li ul {
+    background-color: black;
+    color: white;
+}
+
+/* Homepage */
+.lifeEventBtn:hover {
+    background-color: moccasin;
+    box-shadow: 0px 0px 10px;
+}
+.specialEventImg:after {
+    display: none;
+}
+.specialEventBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* cultureSelection */
+.cultureSelection .culture:hover {
+    background-color: moccasin;
+    box-shadow: 0px 0px 10px;
+}
+
+/* sideNav */
+.sideNav ul li a:hover {
+    color: white;
+    background-color: gray;
+}
+
+/* sitemap */
+.siteMapTable td a:hover, th a:hover {
+    color: black;
+    background-color: rgba(150, 150, 150, 0.5);
+    border-radius: 5px;
+}
+
+/* footer */
+footer {
+    background: gray;
+    color: white;
+}
+.footerBtn:hover {
+    color: black;
+}
